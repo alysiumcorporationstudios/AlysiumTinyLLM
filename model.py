@@ -2,12 +2,11 @@ import numpy as np
 
 class TinyLM:
     """
-    Character-level language model.
-    Predicts the next character from the previous CONTEXT_SIZE characters.
-    Pure NumPy.
+    Word-level language model.
+    Predicts the next word from the previous CONTEXT_SIZE words.
     """
 
-    def __init__(self, vocab_size, embed_dim=64, hidden_dim=128, context_size=32):
+    def __init__(self, vocab_size, embed_dim=64, hidden_dim=128, context_size=5):
         self.vocab_size = vocab_size
         self.embed_dim = embed_dim
         self.hidden_dim = hidden_dim
@@ -24,7 +23,6 @@ class TinyLM:
         return exp / np.sum(exp, axis=-1, keepdims=True)
 
     def forward(self, token_ids):
-        # token_ids: list of length context_size
         embs = [self.embeddings[t] for t in token_ids]
         x = np.concatenate(embs).reshape(1, -1)
         h = np.tanh(np.dot(x, self.W1) + self.b1)
@@ -56,7 +54,7 @@ class TinyLM:
 
         return loss
 
-    def sample(self, probs, temperature=0.7, top_k=15):
+    def sample(self, probs, temperature=0.6, top_k=10):
         logits = np.log(np.clip(probs[0], 1e-9, 1.0)) / max(temperature, 0.05)
         if top_k and top_k < len(logits):
             idx = np.argpartition(logits, -top_k)[-top_k:]

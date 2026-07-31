@@ -45,7 +45,7 @@ class ChatResponse(BaseModel):
     reply: str
 
 
-def generate(prompt: str, max_new: int = 80, temperature: float = 0.7, top_k: int = 15) -> str:
+def generate(prompt: str, max_new: int = 80, temperature: float = 0.4, top_k: int = 15) -> str:
     ids = tokenizer.encode(prompt.lower())
 
     # pad or truncate to context size
