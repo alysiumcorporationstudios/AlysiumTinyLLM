@@ -1,63 +1,126 @@
-# Alysium TinyLM – API
+# Alysium TinyLM
 
-Simple FastAPI server for the character-level TinyLM.
+**Lightweight • Pure NumPy • Educational**
 
-## Local test
+![Alysium TinyLM v1.0](assets/banner.png)
+
+> A tiny character-free, pure NumPy language model built for learning and experimentation.
+
+[![GitHub release](https://img.shields.io/badge/release-v1.0-blue)](https://github.com/alysiumcorporationstudios/AlysiumTinyLLM)
+[![Python](https://img.shields.io/badge/python-3.8+-yellow)](https://www.python.org/)
+[![NumPy](https://img.shields.io/badge/numpy-pure-orange)](https://numpy.org/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+---
+
+## What is Alysium TinyLM?
+
+Alysium TinyLM is a **small educational language model** written entirely in pure NumPy.  
+It was created to help people understand how language models work under the hood — without heavy frameworks like PyTorch or TensorFlow.
+
+- Word-level next-word prediction
+- Extremely lightweight
+- Easy to train on your own data
+- Simple chat interface
+- Perfect for learning and experimentation
+
+---
+
+## Features
+
+- Pure NumPy implementation (no PyTorch / TensorFlow)
+- Easy to understand and modify
+- Train on your own `dataset.txt`
+- Interactive chat mode
+- Small enough to run on limited hardware
+
+---
+
+## Quick Start
 
 ```bash
-pip install -r requirements.txt
-uvicorn main:app --reload
+# Clone the repository
+git clone https://github.com/alysiumcorporationstudios/AlysiumTinyLLM.git
+cd AlysiumTinyLLM
+
+# Install dependency
+pip install numpy
+
+# Chat with the model
+python chat.py
 ```
 
-Then open:
-- http://127.0.0.1:8000
-- http://127.0.0.1:8000/docs  (interactive docs)
+---
 
-### Example request
+## Training your own model
+
+1. Edit `dataset.txt` with your own conversations (one utterance per line)
+2. Run training:
 
 ```bash
-curl -X POST http://127.0.0.1:8000/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "hello"}'
+python train.py
 ```
 
-## Deploy on Render (Recommended)
+3. After training finishes, a new `tinylm.pkl` will be created.  
+4. Run `python chat.py` to talk to your updated model.
 
-1. Create a new **Web Service** on Render
-2. Connect your GitHub repository
-3. Use these settings:
+---
 
-   - **Root Directory**: `api`   (important!)
-   - **Runtime**: Python 3
-   - **Build Command**: `pip install -r requirements.txt`
-   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+## Project Structure
 
-4. Click Deploy
-
-After it finishes you will get a URL like:
-`https://alysium-tinylm.onrender.com`
-
-### Important notes for Render free tier
-- The service will sleep after some inactivity
-- First request after sleep can take 30–60 seconds
-- Perfect for personal / low-traffic use
-
-## API Endpoints
-
-| Method | Endpoint   | Description              |
-|--------|------------|--------------------------|
-| GET    | `/`        | Basic info               |
-| GET    | `/health`  | Health check             |
-| POST   | `/chat`    | Send message, get reply  |
-| GET    | `/docs`    | Interactive documentation|
-
-### POST /chat body
-
-```json
-{
-  "message": "hello how are you",
-  "max_new_chars": 80,
-  "temperature": 0.7,
-  "top_k": 15
-}
 ```
+AlysiumTinyLLM/
+├── model.py          # The neural network
+├── train.py          # Training script
+├── chat.py           # Interactive chat
+├── config.py         # Model & training settings
+├── dataset.txt       # Training data
+├── tinylm.pkl        # Trained model weights
+└── README.md
+```
+
+---
+
+## Configuration
+
+You can change model size and training settings in `config.py`:
+
+```python
+EMBED_DIM = 64
+HIDDEN_DIM = 128
+CONTEXT_SIZE = 5
+EPOCHS = 25
+LEARNING_RATE = 0.025
+```
+
+---
+
+## Example
+
+```
+You: hi
+AI:  hello how are you.
+
+You: what is your name
+AI:  my name is alysium.
+
+You: bye
+AI:  goodbye.
+```
+
+---
+
+## Socials
+
+- **X (Twitter):** [@AlysiumCorpZA](https://x.com/AlysiumCorpZA)
+- **Instagram:** [@iam_realtoxicdeemodder](https://instagram.com/iam_realtoxicdeemodder)
+
+---
+
+## License
+
+This project is open source under the MIT License.
+
+---
+
+**Made with ❤️ by Alysium Corporation Studios**
