@@ -1,0 +1,27 @@
+Alysium TinyLM - Word Level Training (vectorized/batched)
+--------------------------------------------------
+Total words: 1500044
+Vocabulary size: 420
+Model: embed=384, hidden=560, context=5
+Total parameters: 1,472,660
+Batch size: 256
+
+Building training examples...
+Training examples: 500,015
+
+Training...
+Epoch  1/6  loss=4.5507  lr=0.0200  time=60.6s
+Epoch  2/6  loss=3.1893  lr=0.0190  time=62.5s
+Epoch  3/6  loss=2.5093  lr=0.0181  time=61.2s
+Epoch  4/6  loss=2.0979  lr=0.0171  time=60.8s
+Alysium TinyLM - Resume training
+--------------------------------------------------
+Resumed model: params=1,472,660, vocab=420
+Training examples: 500,015
+Epoch  5/6  loss=1.8468  lr=0.0163  time=118.9s
+Alysium TinyLM - Resume training
+--------------------------------------------------
+Resumed model: params=1,472,660, vocab=420
+Training examples: 500,015
+Epoch  6/6  loss=1.6863  lr=0.0155  time=121.4s
+Checkpoint saved.
