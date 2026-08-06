@@ -25,3 +25,202 @@ Resumed model: params=1,472,660, vocab=420
 Training examples: 500,015
 Epoch  6/6  loss=1.6863  lr=0.0155  time=121.4s
 Checkpoint saved.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 1/6, batch_start=552704
+Epoch 1/6  processed 651,008/666,423 (97.7%)  running_avg_loss=3.4488  chunk_time=160.2s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 1/6, batch_start=651008
+Epoch 1/6  processed 666,624/666,423 (100.0%)  running_avg_loss=3.4279  chunk_time=25.6s
+==> Epoch 1 COMPLETE. avg_loss=3.4279
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=0
+Epoch 2/6  processed 100,352/666,423 (15.1%)  running_avg_loss=2.4802  chunk_time=160.4s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=100352
+Epoch 2/6  processed 192,512/666,423 (28.9%)  running_avg_loss=2.4209  chunk_time=160.1s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=192512
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=192512
+Epoch 2/6  processed 261,632/666,423 (39.3%)  running_avg_loss=2.3840  chunk_time=160.5s
+Checkpoint saved. Run again to continue.
+Epoch 2/6  processed 269,824/666,423 (40.5%)  running_avg_loss=2.3787  chunk_time=165.0s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=269824
+Epoch 2/6  processed 374,016/666,423 (56.1%)  running_avg_loss=2.3311  chunk_time=165.0s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=374016
+Epoch 2/6  processed 474,368/666,423 (71.2%)  running_avg_loss=2.2868  chunk_time=165.1s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=474368
+Epoch 2/6  processed 579,328/666,423 (86.9%)  running_avg_loss=2.2463  chunk_time=165.4s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 2/6, batch_start=579328
+Epoch 2/6  processed 666,624/666,423 (100.0%)  running_avg_loss=2.2139  chunk_time=137.6s
+==> Epoch 2 COMPLETE. avg_loss=2.2139
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 3/6, batch_start=0
+Epoch 3/6  processed 102,912/666,423 (15.4%)  running_avg_loss=1.9599  chunk_time=165.3s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 3/6, batch_start=102912
+Epoch 3/6  processed 203,008/666,423 (30.5%)  running_avg_loss=1.9390  chunk_time=165.4s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 3/6, batch_start=203008
+Epoch 3/6  processed 304,640/666,423 (45.7%)  running_avg_loss=1.9183  chunk_time=165.0s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 3/6, batch_start=304640
+Epoch 3/6  processed 407,552/666,423 (61.2%)  running_avg_loss=1.8976  chunk_time=165.0s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 3/6, batch_start=407552
+Epoch 3/6  processed 512,768/666,423 (76.9%)  running_avg_loss=1.8787  chunk_time=165.3s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 256
+Resuming at epoch 3/6, batch_start=512768
+Epoch 3/6  processed 617,472/666,423 (92.7%)  running_avg_loss=1.8602  chunk_time=165.1s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 1024
+Resuming at epoch 3/6, batch_start=617472
+Epoch 3/6  processed 666,624/666,423 (100.0%)  running_avg_loss=1.8580  chunk_time=116.6s
+==> Epoch 3 COMPLETE. avg_loss=1.8580
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 1024
+Resuming at epoch 4/6, batch_start=0
+Epoch 4/6  processed 112,640/666,423 (16.9%)  running_avg_loss=1.7521  chunk_time=270.5s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=112640
+Epoch 4/6  processed 217,088/666,423 (32.6%)  running_avg_loss=1.7478  chunk_time=165.2s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=217088
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=217088
+Epoch 4/6  processed 257,024/666,423 (38.6%)  running_avg_loss=1.7428  chunk_time=165.6s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=257024
+Epoch 4/6  processed 300,544/666,423 (45.1%)  running_avg_loss=1.7381  chunk_time=271.4s
+Checkpoint saved. Run again to continue.
+Epoch 4/6  processed 344,576/666,423 (51.7%)  running_avg_loss=1.7357  chunk_time=165.3s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=344576
+Epoch 4/6  processed 448,512/666,423 (67.3%)  running_avg_loss=1.7300  chunk_time=165.6s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=448512
+Epoch 4/6  processed 551,424/666,423 (82.7%)  running_avg_loss=1.7227  chunk_time=165.2s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=551424
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=551424
+Epoch 4/6  processed 626,688/666,423 (94.0%)  running_avg_loss=1.7202  chunk_time=166.6s
+Checkpoint saved. Run again to continue.
+Epoch 4/6  processed 624,640/666,423 (93.7%)  running_avg_loss=1.7204  chunk_time=165.8s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 4/6, batch_start=624640
+Epoch 4/6  processed 666,624/666,423 (100.0%)  running_avg_loss=1.7196  chunk_time=68.3s
+==> Epoch 4 COMPLETE. avg_loss=1.7196
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=0
+Epoch 5/6  processed 103,936/666,423 (15.6%)  running_avg_loss=1.6762  chunk_time=165.6s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=103936
+Epoch 5/6  processed 210,944/666,423 (31.7%)  running_avg_loss=1.6754  chunk_time=165.7s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=210944
+Epoch 5/6  processed 314,368/666,423 (47.2%)  running_avg_loss=1.6696  chunk_time=165.4s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=314368
+Epoch 5/6  processed 405,504/666,423 (60.8%)  running_avg_loss=1.6658  chunk_time=165.7s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=405504
+Epoch 5/6  processed 512,000/666,423 (76.8%)  running_avg_loss=1.6629  chunk_time=165.9s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=512000
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=512000
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=512000
+Epoch 5/6  processed 582,656/666,423 (87.4%)  running_avg_loss=1.6605  chunk_time=165.6s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=512000
+Epoch 5/6  processed 544,256/666,423 (81.7%)  running_avg_loss=1.6618  chunk_time=165.3s
+Checkpoint saved. Run again to continue.
+Epoch 5/6  processed 546,304/666,423 (82.0%)  running_avg_loss=1.6617  chunk_time=165.6s
+Checkpoint saved. Run again to continue.
+Epoch 5/6  processed 563,200/666,423 (84.5%)  running_avg_loss=1.6613  chunk_time=165.2s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=563200
+Epoch 5/6  processed 634,368/666,423 (95.2%)  running_avg_loss=1.6578  chunk_time=165.2s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 5/6, batch_start=634368
+Epoch 5/6  processed 666,624/666,423 (100.0%)  running_avg_loss=1.6560  chunk_time=72.7s
+==> Epoch 5 COMPLETE. avg_loss=1.6560
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=0
+Epoch 6/6  processed 72,704/666,423 (10.9%)  running_avg_loss=1.6269  chunk_time=166.7s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=72704
+Epoch 6/6  processed 144,896/666,423 (21.7%)  running_avg_loss=1.6239  chunk_time=166.8s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=144896
+Epoch 6/6  processed 210,944/666,423 (31.7%)  running_avg_loss=1.6180  chunk_time=165.3s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=210944
+Epoch 6/6  processed 281,600/666,423 (42.3%)  running_avg_loss=1.6151  chunk_time=166.8s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=281600
+Epoch 6/6  processed 354,304/666,423 (53.2%)  running_avg_loss=1.6127  chunk_time=165.2s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=354304
+Epoch 6/6  processed 427,008/666,423 (64.1%)  running_avg_loss=1.6120  chunk_time=166.1s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=427008
+Epoch 6/6  processed 494,592/666,423 (74.2%)  running_avg_loss=1.6097  chunk_time=165.8s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=494592
+Epoch 6/6  processed 567,296/666,423 (85.1%)  running_avg_loss=1.6071  chunk_time=166.5s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=567296
+Epoch 6/6  processed 638,464/666,423 (95.8%)  running_avg_loss=1.6053  chunk_time=165.6s
+Checkpoint saved. Run again to continue.
+Total examples per epoch: 666,423, batch size: 512
+Resuming at epoch 6/6, batch_start=638464
+Epoch 6/6  processed 666,624/666,423 (100.0%)  running_avg_loss=1.6044  chunk_time=71.4s
+==> Epoch 6 COMPLETE. avg_loss=1.6044
+
+ALL EPOCHS COMPLETE.

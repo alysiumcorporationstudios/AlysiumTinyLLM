@@ -1,29 +1,32 @@
+import re
+import pickle
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import pickle
-import numpy as np
 
 from model import TinyLM
-from tokenizer import CharTokenizer
 import config
 
 # ---------- Load model once at startup ----------
-print("Loading Alysium TinyLM...")
-tokenizer = CharTokenizer().load("tokenizer.json")
+print("Loading Alysium TinyLM (word-level)...")
 
 with open("tinylm.pkl", "rb") as f:
-    data = pickle.load(f)
+    ckpt = pickle.load(f)
 
-model = data["model"]
-ctx_size = data["config"]["context_size"]
-print("Model loaded successfully.")
+model = ckpt["model"]
+word_to_idx = ckpt["word_to_idx"]
+idx_to_word = ckpt["idx_to_word"]
+ctx_size = ckpt["context_size"]
+PAD = ckpt["pad_token"]
+pad_id = word_to_idx[PAD]
+
+print(f"Model loaded. params={model.num_params():,} vocab={len(word_to_idx)} context={ctx_size}")
 
 # ---------- FastAPI app ----------
 app = FastAPI(
     title="Alysium TinyLM API",
-    description="Lightweight character-level language model",
-    version="3.0"
+    description="Lightweight word-level language model",
+    version="4.0"
 )
 
 # Allow your frontend / Neuraprompt AI to call this API
@@ -35,22 +38,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class ChatRequest(BaseModel):
     message: str
-    max_new_chars: int = 80
-    temperature: float = 0.7
-    top_k: int = 15
+    max_new_words: int = config.MAX_NEW_WORDS
+    temperature: float = config.TEMPERATURE
+    top_k: int = config.TOP_K
+
 
 class ChatResponse(BaseModel):
     reply: str
 
 
-def generate(prompt: str, max_new: int = 80, temperature: float = 0.4, top_k: int = 15) -> str:
-    ids = tokenizer.encode(prompt.lower())
+def tokenize(text: str):
+    return [w for w in re.findall(r"[a-z0-9']+|[.!?]", text.lower()) if w.strip()]
 
-    # pad or truncate to context size
+
+def generate(prompt: str, max_new: int = 12, temperature: float = 0.45, top_k: int = 8) -> str:
+    words = tokenize(prompt)
+    ids = [word_to_idx.get(w, pad_id) for w in words]
+
     if len(ids) < ctx_size:
-        pad_id = tokenizer.char_to_id.get(" ", 0)
         ids = [pad_id] * (ctx_size - len(ids)) + ids
     else:
         ids = ids[-ctx_size:]
@@ -59,18 +67,25 @@ def generate(prompt: str, max_new: int = 80, temperature: float = 0.4, top_k: in
     for _ in range(max_new):
         _, _, probs = model.forward(ids)
         next_id = model.sample(probs, temperature=temperature, top_k=top_k)
-        next_char = tokenizer.id_to_char.get(next_id, "?")
-        generated.append(next_char)
+        next_word = idx_to_word.get(next_id, "")
+        if next_word and next_word != PAD:
+            generated.append(next_word)
         ids = ids[1:] + [next_id]
 
-    return "".join(generated).strip()
+    # join words, tidy spacing around punctuation
+    text = " ".join(generated)
+    text = re.sub(r"\s+([.!?])", r"\1", text)
+    return text.strip()
 
 
 @app.get("/")
 def home():
     return {
         "name": "Alysium TinyLM",
-        "version": "3.0",
+        "version": "4.0",
+        "type": "word-level",
+        "vocab_size": len(word_to_idx),
+        "parameters": model.num_params(),
         "status": "running",
         "docs": "/docs"
     }
@@ -84,7 +99,7 @@ def chat(req: ChatRequest):
     try:
         reply = generate(
             req.message,
-            max_new=req.max_new_chars,
+            max_new=req.max_new_words,
             temperature=req.temperature,
             top_k=req.top_k
         )
